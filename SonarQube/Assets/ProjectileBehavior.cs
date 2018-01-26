@@ -14,7 +14,7 @@ public class ProjectileBehavior : MonoBehaviour {
 		Vector2 currentPosition = this.transform.position
 		
 	}
-<<<<<<< HEAD
+
 	/*
 	void OnCollisionEnter(Collision collision)
 	{
@@ -26,16 +26,5 @@ public class ProjectileBehavior : MonoBehaviour {
 			audioSource.Play();
 	}
 	*/
-=======
 
-//	void OnCollisionEnter(Collision collision)
-//	{
-//		foreach (ContactPoint contact in collision.contacts)
-//		{
-//			Debug.DrawRay(contact.point, contact.normal, Color.white);
-//		}
-//		if (collision.relativeVelocity.magnitude > 2)
-//			audioSource.Play();
-//	}
->>>>>>> b78da7b1b4bec392168a82db2c9e9df10dec6251
 }
