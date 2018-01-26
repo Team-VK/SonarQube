@@ -1,2 +1,4 @@
 SonarQube/Library/ShaderCache/*
 *.bin
+SonarQube/Temp/*
+SonarQube/Library/metadata/*

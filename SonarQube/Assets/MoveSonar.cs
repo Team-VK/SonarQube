@@ -4,17 +4,19 @@ using UnityEngine;
 
 public class MoveSonar : MonoBehaviour {
 
+	Light sonar;
+
 	// Use this for initialization
 	void Start() {
-		
+		sonar = GameObject.Find("Sonar").GetComponent<Light>();
 	}
 	
 	// Update is called once per frame
 	void Update() {
-		Vector2 positionOnScreen = Camera.main.WorldToViewportPoint(transform.position);
-		Vector2 mouseOnScreen = (Vector2)Camera.main.ScreenToViewportPoint(Input.mousePosition);
+		Vector2 positionOnScreen = sonar.transform.position;
+		Vector2 mouseOnScreen = (Vector2)Input.mousePosition;
 		float angle = AngleBetweenTwoPoints(positionOnScreen, mouseOnScreen);
-		transform.rotation =  Quaternion.Euler (new Vector3(0f,0f,angle));
+		sonar.transform.rotation =  Quaternion.Euler(new Vector3(angle,90,0f));
 	}
 
 	float AngleBetweenTwoPoints(Vector3 a, Vector3 b) {
