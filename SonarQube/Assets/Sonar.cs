@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoveSonar : MonoBehaviour {
+public class Sonar : MonoBehaviour {
 
 	Light sonar;
 
@@ -31,10 +31,8 @@ public class MoveSonar : MonoBehaviour {
 
 	//Sends a sonar wave in the direction pointed by the sonar device
 	void sendSonarWave(Vector2 positionOnScreen, Vector2 mouseOnScreen, Quaternion rotation) {
-		GameObject cylinder = GameObject.CreatePrimitive(PrimitiveType.Cylinder);
-		cylinder.transform.position = new Vector3 (positionOnScreen.x, positionOnScreen.y, 0);
-		cylinder.transform.localScale = new Vector3(1, 1, 1);
-		cylinder.transform.rotation = rotation;
+		Transform Projectile;
+		Instantiate(Projectile, new Vector3(positionOnScreen.x, positionOnScreen.y, 0), rotation);
 	}
 
 	float AngleBetweenTwoPoints(Vector3 a, Vector3 b) {

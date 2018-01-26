@@ -11,9 +11,10 @@ public class ProjectileBehavior : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		Vector2 currentPosition = this.transform.position
 		
 	}
-
+	/*
 	void OnCollisionEnter(Collision collision)
 	{
 		foreach (ContactPoint contact in collision.contacts)
@@ -23,4 +24,5 @@ public class ProjectileBehavior : MonoBehaviour {
 		if (collision.relativeVelocity.magnitude > 2)
 			audioSource.Play();
 	}
+	*/
 }
