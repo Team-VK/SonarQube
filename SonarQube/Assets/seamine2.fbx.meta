@@ -1,16 +1,21 @@
 fileFormatVersion: 2
-guid: ccc6189b374cc420eb9ccae59a295af5
-timeCreated: 1517052443
+guid: b7875cb730cfc41bfad5b046e5fc5e9b
+timeCreated: 1517065710
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
+    100000: Lamp
+    100002: //RootNode
+    100004: Sphere
+    400000: Lamp
+    400002: //RootNode
+    400004: Sphere
     2100000: No Name
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Cylinder
+    2300000: Sphere
+    3300000: Sphere
+    4300000: Sphere
+    10800000: Lamp
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -63,7 +68,7 @@ ModelImporter:
     useFileScale: 1
   tangentSpace:
     normalSmoothAngle: 60
-    normalImportMode: 1
+    normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
   importAnimation: 1
