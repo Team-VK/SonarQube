@@ -1079,6 +1079,7 @@ GameObject:
   - component: {fileID: 1649981135}
   - component: {fileID: 1649981134}
   - component: {fileID: 1649981136}
+  - component: {fileID: 1649981137}
   m_Layer: 0
   m_Name: Sonar
   m_TagString: Sonar
@@ -1147,6 +1148,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectile: {fileID: 4385019387700586, guid: cee29fb658d3447aa8429ad52c2a3fb4, type: 2}
+  pushingprojectile: {fileID: 4891314448415190, guid: 53b5d13fc35ef4a889cbfd15aa478ff2,
+    type: 2}
+--- !u!114 &1649981137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1649981133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17851cb37eca4464e8f2f2308c78c5c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1959031338
 GameObject:
   m_ObjectHideFlags: 0

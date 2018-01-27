@@ -7,6 +7,7 @@ public class Sonar : MonoBehaviour {
 	public Transform projectile;
 	GameObject sonar;
 	GameObject crosshair;
+	public Transform pushingprojectile;
 
 	void Start() {
 		sonar = GameObject.FindWithTag("Sonar");
@@ -37,8 +38,12 @@ public class Sonar : MonoBehaviour {
 		sonar.transform.rotation = rot;
 		//crosshair.transform.rotation = rot;
 
-		if (Input.GetKeyDown ("space")) {
+		if (Input.GetKeyDown(KeyCode.Space)) {
 			sendSonarWave(positionOnScreen, rot, kikkeli);
+			//Debug.Log (rot);
+		}
+		if (Input.GetKeyDown(KeyCode.C)) {
+				sendPushWave(positionOnScreen, rot, kikkeli);
 			//Debug.Log (rot);
 		}
 	}
@@ -51,9 +56,9 @@ public class Sonar : MonoBehaviour {
 	}
 
 	//Send a pushing wave
-	void sendPushWave(Vector2 positionOnScreen, Quaternion rot) {
-		var b = Instantiate(projectile, new Vector3(positionOnScreen.x, positionOnScreen.y, 0), rot);
-		b.GetComponent<Rigidbody> ().velocity = b.transform.forward * 30;
+	void sendPushWave(Vector2 positionOnScreen, Quaternion rot, Vector3 trajectory) {
+		var b = Instantiate(pushingprojectile, new Vector3(positionOnScreen.x, positionOnScreen.y, 0), rot);
+		b.GetComponent<Rigidbody> ().velocity = trajectory * 20;
 	}
 
 	float AngleBetweenTwoPoints(Vector3 a, Vector3 b) {
