@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Sonar : MonoBehaviour {
 
+	public Transform projectile;
 	Light sonar;
 
 	void Start() {
@@ -26,13 +27,13 @@ public class Sonar : MonoBehaviour {
 
 		if (Input.GetKeyDown ("space")) {
 			sendSonarWave(positionOnScreen, mouseOnScreen, rotation);
+			Debug.Log (rotation);
 		}
 	}
 
 	//Sends a sonar wave in the direction pointed by the sonar device
 	void sendSonarWave(Vector2 positionOnScreen, Vector2 mouseOnScreen, Quaternion rotation) {
-		Transform Projectile;
-		Instantiate(Projectile, new Vector3(positionOnScreen.x, positionOnScreen.y, 0), rotation);
+		Instantiate(projectile, new Vector3(positionOnScreen.x, positionOnScreen.y, 0), rotation);
 	}
 
 	float AngleBetweenTwoPoints(Vector3 a, Vector3 b) {
