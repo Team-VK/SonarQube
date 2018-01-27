@@ -5,3 +5,7 @@ SonarQube/Library/metadata/*
 SonarQube/Library/ScriptAsseblies/*
 *.log
 *.db
+.DS_Store
+SonarQube/.vscode/*
+assetDatabase3
+expandedItems
