@@ -38,10 +38,12 @@ public class PlayerInput : MonoBehaviour {
 		if (this.CompareTag ("Crosshair") == true) {
 			if (Input.GetKey (KeyCode.UpArrow)) {
 				y += crosshairspeed * Time.deltaTime;
+				Debug.Log ("uparrow");
 			}
 
 			if (Input.GetKey (KeyCode.DownArrow)) {
 				y -= crosshairspeed * Time.deltaTime;
+				Debug.Log ("downarrow");
 			}
 		}
  
@@ -57,7 +59,7 @@ public class PlayerInput : MonoBehaviour {
             position.y = floor;
         }
 
-		Debug.Log ("Position x,y,z: " + position.x + ", " + position.y + ", " + position.z);
+		//Debug.Log ("Position x,y,z: " + position.x + ", " + position.y + ", " + position.z);
 
         this.transform.position = position;
     }

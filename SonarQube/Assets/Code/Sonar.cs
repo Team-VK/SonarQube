@@ -9,8 +9,8 @@ public class Sonar : MonoBehaviour {
 	Plane crosshair;
 
 	void Start() {
-		sonar = GameObject.Find("Sonar").GetComponent<Light>();
-		crosshair = GameObject.Find("Crosshair").GetComponent<Plane>();
+		sonar = GameObject.FindGameObjectWithTag("Sonar").GetComponent<Light>();
+		crosshair = GameObject.FindGameObjectWithTag("Crosshair").GetComponent<Plane>();
 	}
 	
 	void Update() {
@@ -26,10 +26,11 @@ public class Sonar : MonoBehaviour {
 			
 		Quaternion rot = Quaternion.Euler (new Vector3 (angle, 90, 0f));
 		sonar.transform.rotation = rot;
+		//crosshair.SetNormalAndPosition
 
 		if (Input.GetKeyDown ("space")) {
 			sendSonarWave(positionOnScreen, rot);
-			Debug.Log (rot);
+			//Debug.Log (rot);
 		}
 	}
 
@@ -37,7 +38,7 @@ public class Sonar : MonoBehaviour {
 	void sendSonarWave(Vector2 positionOnScreen, Quaternion rot) {
 		var b = Instantiate(projectile, new Vector3(positionOnScreen.x, positionOnScreen.y, 0), rot);
 		b.GetComponent<Rigidbody> ().velocity = b.transform.forward * 10;
-		Debug.Log (b.transform.rotation);
+		//Debug.Log (b.transform.rotation);
 	}
 
 	float AngleBetweenTwoPoints(Vector3 a, Vector3 b) {

@@ -12,11 +12,10 @@ public class FollowPlayer : MonoBehaviour {
 		// nada
 	}
 	
-	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
 		// Get player, and following objects position
-		var sub_pos = GameObject.FindGameObjectWithTag("Player").transform.position;
-		var mine_pos = this.transform.position;
+		Vector3 sub_pos = GameObject.FindGameObjectWithTag("Subumarine").transform.position;
+		Vector3 mine_pos = this.transform.position;
 
 		// Calculate this objects direction to player
 		var angle = Mathf.Atan2(mine_pos.x - sub_pos.x, mine_pos.y - sub_pos.y);
@@ -24,6 +23,6 @@ public class FollowPlayer : MonoBehaviour {
 		mine_pos.y -= Mathf.Cos(angle) * speed * Time.deltaTime;
 
 		// Places movement values to this
-		this.transform.position = mine_pos;
+		this.transform.position = new Vector3 (mine_pos.x, mine_pos.y, 0f);
 	}
 }

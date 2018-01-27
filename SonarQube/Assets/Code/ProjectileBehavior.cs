@@ -18,7 +18,7 @@ public class ProjectileBehavior : MonoBehaviour {
 	// Update is called once per frame
 
 	void Update () {
-		this.transform.localScale = new Vector3 (this.transform.localScale.x+0.1f, this.transform.localScale.y+0.1f, this.transform.localScale.z+0.1f);
+		this.transform.localScale = new Vector3 (this.transform.localScale.x+0.01f, this.transform.localScale.y+0.01f, this.transform.localScale.z+0.01f);
 	}
 
 	/*
