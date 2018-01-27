@@ -7,3 +7,5 @@ SonarQube/Library/ScriptAsseblies/*
 *.db
 .DS_Store
 SonarQube/.vscode/*
+assetDatabase3
+expandedItems
