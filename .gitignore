@@ -9,6 +9,11 @@ SonarQube/Library/metadata/*
 SonarQube/Library/ScriptAssemblies/*
 SonarQube/Library/PlayerDataCache/*
 SonarQube/Library/ShaderCache/*
+SonarQube/Assembly-CSharp.csproj
+SonarQube/Library/CrashedAssetImports.txt
+SonarQube/Library/EditorInstance.json
+SonarQube/Library/ScriptAssemblies/Assembly-CSharp.dll.mdb
+
 
 assetDatabase3
 expandedItems
