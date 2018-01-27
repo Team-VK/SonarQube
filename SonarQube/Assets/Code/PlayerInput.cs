@@ -23,7 +23,7 @@ public class PlayerInput : MonoBehaviour {
 
         if (Input.GetKey(KeyCode.W)) {
 			y += playerspeed * Time.deltaTime;
-        }
+		}
         if (Input.GetKey(KeyCode.S)) {
 			y -= playerspeed * Time.deltaTime;
         }
@@ -37,15 +37,16 @@ public class PlayerInput : MonoBehaviour {
 		//Crosshair controls
 		if (this.CompareTag ("Crosshair") == true) {
 			if (Input.GetKey (KeyCode.UpArrow)) {
+				Debug.Log ("Moving upwards");
+				Debug.Log (this.transform.position.y * Time.deltaTime);
 				y += crosshairspeed * Time.deltaTime;
-				Debug.Log ("uparrow");
 			}
 
 			if (Input.GetKey (KeyCode.DownArrow)) {
 				y -= crosshairspeed * Time.deltaTime;
-				Debug.Log ("downarrow");
 			}
 		}
+			
  
         position.x += x;
         position.y += y;
@@ -61,6 +62,6 @@ public class PlayerInput : MonoBehaviour {
 
 		//Debug.Log ("Position x,y,z: " + position.x + ", " + position.y + ", " + position.z);
 
-        this.transform.position = position;
+		this.transform.position = position;
     }
 }

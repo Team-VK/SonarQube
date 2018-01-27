@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Sonar
   - Crosshair
+  - Subumarine
   layers:
   - Default
   - TransparentFX
