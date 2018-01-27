@@ -6,16 +6,16 @@ public class Sonar : MonoBehaviour {
 
 	public Transform projectile;
 	Light sonar;
-	Sprite crosshair;
+	Plane crosshair;
 
 	void Start() {
 		sonar = GameObject.Find("Sonar").GetComponent<Light>();
-		crosshair = GameObject.Find("Crosshair").GetComponent<Sprite>();
+		crosshair = GameObject.Find("Crosshair").GetComponent<Plane>();
 	}
 	
 	void Update() {
 		Vector2 positionOnScreen = sonar.transform.position;
-		Vector2 crosshairPosition = crosshair.transform.position;
+		Vector2 crosshairPosition = (Vector2) crosshair.ClosestPointOnPlane((Vector3) positionOnScreen);
 		float angle = AngleBetweenTwoPoints(positionOnScreen, crosshairPosition);
 		if(angle > 55) {
 			angle = 55;

@@ -14,8 +14,8 @@ public class SideScroll : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		// Increase players x with parameterized side scrolling speed
-		var sub_pos = GameObject.FindGameObjectWithTag("Player").transform.position;
-		var sub_pos.x += sideScrollSpeed * Time.deltaTime;
-		GameObject.FindGameObjectWithTag("Player").transform.position = sub_pos;
+		var sub_pos = this.transform.position;
+		sub_pos.x += sideScrollSpeed * Time.deltaTime;
+		this.transform.position = sub_pos;
 	}
 }
