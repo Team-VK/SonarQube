@@ -10,7 +10,7 @@ public class ProjectileBehavior : MonoBehaviour {
 		Vector2 mouseOnScreen = (Vector2)Input.mousePosition; //Direction to shoot the projectile at
 		this.transform.localScale = new Vector3 (0.3f, 0.3f, 0.3f);
 		this.GetComponent<Rigidbody>().rotation = Quaternion.Euler(new Vector3(Random.Range(-10.0f, 10.0f), Random.Range(-10.0f, 10.0f), 0f));
-		this.GetComponent<Rigidbody>().velocity = new Vector3(1f, 1f, 0f);
+		//this.GetComponent<Rigidbody>().velocity = new Vector3(1f, 1f, 0f);
 		//this.GetComponent<Rigidbody>().AddForce(Quaternion.Euler(this.transform.rotation)*this.transform.forward * 0.1f);
 
 	}
@@ -18,7 +18,7 @@ public class ProjectileBehavior : MonoBehaviour {
 	// Update is called once per frame
 
 	void Update () {
-		this.transform.localScale = new Vector3 (this.transform.localScale.x+0.1f, this.transform.localScale.y+0.1f, this.transform.localScale.z+0.1f);
+		//this.transform.localScale = new Vector3 (this.transform.localScale.x+0.1f, this.transform.localScale.y+0.1f, this.transform.localScale.z+0.1f);
 	}
 
 	/*

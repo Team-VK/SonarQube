@@ -22,18 +22,20 @@ public class Sonar : MonoBehaviour {
 			angle = -55;
 		}
 			
-		Quaternion rotation = Quaternion.Euler (new Vector3 (angle, 90, 0f));
-		sonar.transform.rotation = rotation;
+		Quaternion rot = Quaternion.Euler (new Vector3 (angle, 90, 0f));
+		sonar.transform.rotation = rot;
 
 		if (Input.GetKeyDown ("space")) {
-			sendSonarWave(positionOnScreen, mouseOnScreen, rotation);
-			Debug.Log (rotation);
+			sendSonarWave(positionOnScreen, mouseOnScreen, rot);
+			Debug.Log (rot);
 		}
 	}
 
 	//Sends a sonar wave in the direction pointed by the sonar device
-	void sendSonarWave(Vector2 positionOnScreen, Vector2 mouseOnScreen, Quaternion rotation) {
-		Instantiate(projectile, new Vector3(positionOnScreen.x, positionOnScreen.y, 0), rotation);
+	void sendSonarWave(Vector2 positionOnScreen, Vector2 mouseOnScreen, Quaternion rot) {
+		var b = Instantiate(projectile, new Vector3(positionOnScreen.x, positionOnScreen.y, 0), rot);
+		b.GetComponent<Rigidbody> ().velocity = b.transform.forward * 3;
+		Debug.Log (b.transform.rotation);
 	}
 
 	float AngleBetweenTwoPoints(Vector3 a, Vector3 b) {
