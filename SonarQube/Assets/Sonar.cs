@@ -6,15 +6,17 @@ public class Sonar : MonoBehaviour {
 
 	public Transform projectile;
 	Light sonar;
+	Sprite crosshair;
 
 	void Start() {
 		sonar = GameObject.Find("Sonar").GetComponent<Light>();
+		crosshair = GameObject.Find("Crosshair").GetComponent<Sprite>();
 	}
 	
 	void Update() {
 		Vector2 positionOnScreen = sonar.transform.position;
-		Vector2 mouseOnScreen = (Vector2)Input.mousePosition;
-		float angle = AngleBetweenTwoPoints(positionOnScreen, mouseOnScreen);
+		Vector2 crosshairPosition = crosshair.transform.position;
+		float angle = AngleBetweenTwoPoints(positionOnScreen, crosshairPosition);
 		if(angle > 55) {
 			angle = 55;
 		}
@@ -26,13 +28,13 @@ public class Sonar : MonoBehaviour {
 		sonar.transform.rotation = rot;
 
 		if (Input.GetKeyDown ("space")) {
-			sendSonarWave(positionOnScreen, mouseOnScreen, rot);
+			sendSonarWave(positionOnScreen, rot);
 			Debug.Log (rot);
 		}
 	}
 
 	//Sends a sonar wave in the direction pointed by the sonar device
-	void sendSonarWave(Vector2 positionOnScreen, Vector2 mouseOnScreen, Quaternion rot) {
+	void sendSonarWave(Vector2 positionOnScreen, Quaternion rot) {
 		var b = Instantiate(projectile, new Vector3(positionOnScreen.x, positionOnScreen.y, 0), rot);
 		b.GetComponent<Rigidbody> ().velocity = b.transform.forward * 3;
 		Debug.Log (b.transform.rotation);
