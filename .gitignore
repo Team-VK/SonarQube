@@ -1,7 +1,18 @@
-SonarQube/Library/ShaderCache/*
+#Filtypes
 *.bin
-SonarQube/Temp/*
-SonarQube/Library/metadata/*
-SonarQube/Library/ScriptAsseblies/*
 *.log
 *.db
+
+#Ignore unity temp and meta data that doesn't belong in git
+SonarQube/Temp/*
+SonarQube/Library/metadata/*
+SonarQube/Library/ScriptAssemblies/*
+SonarQube/Library/PlayerDataCache/*
+SonarQube/Library/ShaderCache/*
+
+assetDatabase3
+expandedItems
+
+#OS and IDE files
+.DS_Store
+SonarQube/.vscode/*

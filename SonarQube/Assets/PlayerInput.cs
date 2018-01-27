@@ -11,27 +11,42 @@ public class PlayerInput : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        var speed = 1.0f;
-        Vector3 position = this.transform.position;
+        var playerspeed = 3.0f;
+		var crosshairspeed = 3.0f;
+        Vector3 position = this.transform.position; //Can represent either the player or the crosshair
 
         var x = 0f;
         var y = 0f;
 
         if (Input.GetKey(KeyCode.W)) {
-            y += speed * Time.deltaTime;
+			y += playerspeed * Time.deltaTime;
         }
         if (Input.GetKey(KeyCode.S)) {
-            y -= speed * Time.deltaTime;
+			y -= playerspeed * Time.deltaTime;
         }
         if (Input.GetKey(KeyCode.A)) {
-            x -= speed * Time.deltaTime;
+			x -= playerspeed * Time.deltaTime;
         }
         if (Input.GetKey(KeyCode.D)) {
-            x += speed * Time.deltaTime;
+			x += playerspeed * Time.deltaTime;
         }
+
+		//Crosshair controls
+		if (this.CompareTag ("Crosshair") == true) {
+			if (Input.GetKey (KeyCode.UpArrow)) {
+				y += crosshairspeed * Time.deltaTime;
+			}
+
+			if (Input.GetKey (KeyCode.DownArrow)) {
+				y -= crosshairspeed * Time.deltaTime;
+			}
+		}
  
         position.x += x;
         position.y += y;
+		position.z = 0f;
+
+		Debug.Log ("Position z: " + position.z);
 
         this.transform.position = position;
     }
