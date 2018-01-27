@@ -36,7 +36,7 @@ public class Sonar : MonoBehaviour {
 	//Sends a sonar wave in the direction pointed by the sonar device
 	void sendSonarWave(Vector2 positionOnScreen, Quaternion rot) {
 		var b = Instantiate(projectile, new Vector3(positionOnScreen.x, positionOnScreen.y, 0), rot);
-		b.GetComponent<Rigidbody> ().velocity = b.transform.forward * 3;
+		b.GetComponent<Rigidbody> ().velocity = b.transform.forward * 10;
 		Debug.Log (b.transform.rotation);
 	}
 
