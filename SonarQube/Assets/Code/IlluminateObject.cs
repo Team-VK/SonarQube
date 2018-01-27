@@ -21,4 +21,12 @@ public class IlluminateObject : MonoBehaviour{
 		_material.color = fading;
 		Debug.Log(_material.color);
     }
+	
+	void onCollisionEnter(Collision col)
+    {
+        if(col.gameObject.name == "ScanProjectile")
+        {
+			fading = colorStart;
+        }
+	}
 }

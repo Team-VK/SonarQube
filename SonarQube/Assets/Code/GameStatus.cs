@@ -19,6 +19,5 @@ public class GameStatus : MonoBehaviour {
 		score += (Time.deltaTime * multiplier);
 		multiplier = multiplier + 0.001f;
 		scoreText.text = "Score: " + (long) score  + " " + multiplier;
-		Debug.Log("Score multiplier " + multiplier);
 	}
 }
