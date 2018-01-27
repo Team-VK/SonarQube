@@ -6,9 +6,9 @@ using UnityEngine.UI;
 
 public class GameStatus : MonoBehaviour {
 
-	public static long score;
+	public static float score;
     public Text scoreText;
-    private float multiplier = 1.001;
+    private float multiplier = 1.001f;
 	// Use this for initialization
 	void Start () {
 		score = 0;
@@ -16,8 +16,9 @@ public class GameStatus : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		score += (long) (Time.deltaTime * 100.0f * multiplayer);
-		multiplier = multiplier * multiplier;
-		scoreText.text = "Score: " + score;
+		score += (Time.deltaTime * multiplier);
+		multiplier = multiplier + 0.001f;
+		scoreText.text = "Score: " + (long) score  + " " + multiplier;
+		Debug.Log("Score multiplier " + multiplier);
 	}
 }
