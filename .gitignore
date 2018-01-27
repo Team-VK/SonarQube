@@ -5,15 +5,8 @@
 
 #Ignore unity temp and meta data that doesn't belong in git
 SonarQube/Temp/*
-SonarQube/Library/metadata/*
-SonarQube/Library/ScriptAssemblies/*
-SonarQube/Library/PlayerDataCache/*
-SonarQube/Library/ShaderCache/*
+SonarQube/Library/*
 SonarQube/Assembly-CSharp.csproj
-SonarQube/Library/CrashedAssetImports.txt
-SonarQube/Library/EditorInstance.json
-SonarQube/Library/ScriptAssemblies/Assembly-CSharp.dll.mdb
-SonarQube/Library/ScriptAssemblies/Assembly-CSharp.dll
 assetDatabase3
 expandedItems
 
