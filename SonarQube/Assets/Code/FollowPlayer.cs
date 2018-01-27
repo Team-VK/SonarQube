@@ -24,5 +24,6 @@ public class FollowPlayer : MonoBehaviour {
 
 		// Places movement values to this
 		this.transform.position = new Vector3 (mine_pos.x, mine_pos.y, 0f);
+		Debug.Log("Following: " + this.transform.position.x + " " + this.transform.position.y);
 	}
 }
