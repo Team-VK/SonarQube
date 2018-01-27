@@ -4,22 +4,26 @@ using UnityEngine;
 
 public class FollowPlayer : MonoBehaviour {
 
+	public GameObject obj;
+	public float speed;
+
 	// Use this for initialization
 	void Start () {
-		
+		// nada
 	}
 	
 	// Update is called once per frame
 	void Update () {
-
-		var speed = 2f;
-
-		var sub_pos = GameObject.FindGameObjectWithTag("subumarine").transform.position;
+		// Get player, and following objects position
+		var sub_pos = GameObject.FindGameObjectWithTag("Player").transform.position;
 		var mine_pos = this.transform.position;
 
-		// example sub_pos.x
-		// example sub_pos.y
+		// Calculate this objects direction to player
+		var angle = Mathf.Atan2(mine_pos.x - sub_pos.x, mine_pos.y - sub_pos.y);
+		mine_pos.x += -1 * Mathf.Sin(angle) * speed * Time.deltaTime;
+		mine_pos.y -= Mathf.Cos(angle) * speed * Time.deltaTime;
 
-		var direction = sub_pos - mine_pos;	
+		// Places movement values to this
+		this.transform.position = mine_pos;
 	}
 }
