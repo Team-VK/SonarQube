@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PlayerInput : MonoBehaviour {
     
+    private float roof = 5f;
+    private float floor = -4f;
+
     // Use this for initialization
     void Start () {
 
@@ -46,7 +49,15 @@ public class PlayerInput : MonoBehaviour {
         position.y += y;
 		position.z = 0f;
 
-		Debug.Log ("Position z: " + position.z);
+        // Prevent player moving beyond the roof and floor values
+        if (position.y > roof) {
+            position.y = roof;
+        }
+        else if (position.y < floor) {
+            position.y = floor;
+        }
+
+		Debug.Log ("Position x,y,z: " + position.x + ", " + position.y + ", " + position.z);
 
         this.transform.position = position;
     }
