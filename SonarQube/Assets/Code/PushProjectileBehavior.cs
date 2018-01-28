@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PushProjectileBehavior : MonoBehaviour {
 
+	private float timer = 0;
+
 	// Use this for initialization
 	void Start() {
 		Debug.Log (this.transform.rotation);
@@ -20,6 +22,10 @@ public class PushProjectileBehavior : MonoBehaviour {
 
 	void Update () {
 		this.transform.localScale = new Vector3 (this.transform.localScale.x+0.05f, this.transform.localScale.y+0.05f, this.transform.localScale.z+0.05f);
+		timer += Time.deltaTime;
+		Debug.Log (timer);
+		if(timer > 4)
+			Destroy(this.gameObject);
 	}
 
 	/*
