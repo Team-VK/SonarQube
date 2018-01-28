@@ -33,6 +33,6 @@ public class GameStatus : MonoBehaviour {
 
 	void Gameover() {
 		Time.timeScale = 0.0F;
-		gameOver.text = "GAME_OVER_MAN!";
+		gameOver.text = "GAME OVER!";
 	}
 }
