@@ -777,7 +777,7 @@ MonoBehaviour:
   mine: {fileID: 4277476602274638, guid: 651d5e83f0fa543a4939ba998220b967, type: 2}
   barrel: {fileID: 4238034728991842, guid: 05411f2c1e6a84696ae47a932bcad71f, type: 2}
   tree: {fileID: 4742042577773372, guid: b47fb595fe6264eb69512e5cf09f4b6b, type: 2}
-  ring: {fileID: 4377524268539272, guid: c8805ee30c1094b5c8556040927bcc67, type: 2}
+  ring: {fileID: 4080008755452248, guid: 4051484da363c4b67983f62b7f166e7e, type: 2}
 --- !u!1 &761863261
 GameObject:
   m_ObjectHideFlags: 0
@@ -1208,6 +1208,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e08697786cf2940348b51d30b4ed1b69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particle: {fileID: 0}
 --- !u!1 &1426832830
 GameObject:
   m_ObjectHideFlags: 0
