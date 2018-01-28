@@ -3,9 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerInput : MonoBehaviour {
-    
-    private float roof = 5f;
-    private float floor = -4f;
 
     // Use this for initialization
     void Start () {
@@ -53,15 +50,9 @@ public class PlayerInput : MonoBehaviour {
 		position.z = 0f;
 
         // Prevent player moving beyond the roof and floor values
-        if (position.y > roof) {
-            position.y = roof;
-        }
-        else if (position.y < floor) {
-            position.y = floor;
-        }
-
-		//Debug.Log ("Position x,y,z: " + position.x + ", " + position.y + ", " + position.z);
-
-		this.transform.position = position;
+        var pos = Camera.main.WorldToViewportPoint(position);
+        pos.x = Mathf.Clamp(pos.x, 0.1f, 0.9f);
+        pos.y = Mathf.Clamp(pos.y, 0.1f, 0.9f);
+        this.transform.position = Camera.main.ViewportToWorldPoint(pos);
     }
 }
