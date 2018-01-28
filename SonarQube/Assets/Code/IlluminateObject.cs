@@ -4,9 +4,9 @@ using System.Collections.Generic;
 
 public class IlluminateObject : MonoBehaviour{
 
-    public float colorStart = 1.0f;
+    float colorStart = 1.0f;
 	float fading;
-    public float rate = 0.5f;
+    float rate = 0.5f;
     Renderer rend;
     Color color;
 
