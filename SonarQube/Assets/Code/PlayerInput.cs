@@ -48,6 +48,10 @@ public class PlayerInput : MonoBehaviour {
 				y -= crosshairspeed * Time.deltaTime;
 			}
 		}
+
+		if (Input.GetKey ("escape")) {
+			Application.Quit();
+		}
 			
  
         position.x += x;
