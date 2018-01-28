@@ -211,7 +211,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   colorStart: {r: 255, g: 255, b: 255, a: 255}
   rate: 100
-  _material: {fileID: 2100000, guid: ebff2f37876c84685ad81c944a6aee8b, type: 2}
+  _material: {fileID: 2100000, guid: 8931cef55717649709c1bcdaef67da74, type: 2}
 --- !u!114 &114934500221843122
 MonoBehaviour:
   m_ObjectHideFlags: 1
