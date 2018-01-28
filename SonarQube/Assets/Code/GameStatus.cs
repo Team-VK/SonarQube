@@ -35,10 +35,9 @@ public class GameStatus : MonoBehaviour {
 		GameObject[] projectiles = GameObject.FindGameObjectsWithTag("projectile");
 
 		foreach (GameObject projectile in projectiles) {
-			Destroy (projectile);
+			Destroy(projectile)
 		}
-
-		Time.timeScale = 0.0F;
+			
 		gameOver.text = "GAME OVER!";
 	}
 }
