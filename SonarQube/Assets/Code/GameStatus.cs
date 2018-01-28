@@ -32,6 +32,12 @@ public class GameStatus : MonoBehaviour {
 	}
 
 	void Gameover() {
+		GameObject[] projectiles = GameObject.FindGameObjectsWithTag("projectile");
+
+		foreach (GameObject projectile in projectiles) {
+			Destroy (projectile);
+		}
+
 		Time.timeScale = 0.0F;
 		gameOver.text = "GAME OVER!";
 	}
