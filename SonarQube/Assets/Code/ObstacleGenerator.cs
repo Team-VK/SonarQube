@@ -7,6 +7,7 @@ public class ObstacleGenerator : MonoBehaviour {
 	public Transform mine;
 	public Transform barrel;
 	public Transform tree;
+	public Transform ring;
 	//public GameObject player;
 
 	private float distanceAwayFromPlayer = 15f;
@@ -41,7 +42,7 @@ public class ObstacleGenerator : MonoBehaviour {
 		float obstacleX = sub_pos.x + distanceAwayFromPlayer;
         var pos = Camera.main.WorldToViewportPoint(sub_pos);
         pos.x = 1.1f;
-		float rnd = Random.Range(0f, 1f);
+		float rnd = Random.Range(0.0f, 1.0f);
 		float droprnd = Random.Range(0f, 0.5f);
 		if (rnd < 0.25f) {
         	pos.y = rnd;
@@ -63,9 +64,9 @@ public class ObstacleGenerator : MonoBehaviour {
 			Debug.Log("CREATE 3");
 		}
 		else  {
-        	pos.y = 1f - droprnd;
+        	pos.y = rnd;
         	var gen_post = Camera.main.ViewportToWorldPoint(pos);
-			Instantiate(barrel, gen_post,  Random.rotation);
+			Instantiate(ring, gen_post,  Random.rotation);
 			Debug.Log("CREATE 4");
 		}
 	}
