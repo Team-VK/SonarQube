@@ -4,9 +4,9 @@ using System.Collections.Generic;
 
 public class IlluminateObject : MonoBehaviour{
 
-    public Color colorStart = new Color(255F, 255F, 255F, 255F);
+    public Color colorStart = new Color(255f, 255F, 255f, 255f);
 	Color fading;
-    public float rate = 100.0F;
+    public float rate = 100.0f;
     public Material _material;
 	Shader shader;
 
@@ -19,7 +19,7 @@ public class IlluminateObject : MonoBehaviour{
 		}
 		fading.a -= rate * Time.deltaTime;
 		_material.color = fading;
-		Debug.Log(_material.color);
+		//Debug.Log(_material.color);
     }
 	
 	void onCollisionEnter(Collision col)

@@ -1,8 +1,13 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Code/FollowPlayer.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Code/GameStatus.cs">
     <Files>
-      <File FileName="Assets/Code/FollowPlayer.cs" Line="24" Column="3" />
+      <File FileName="Assets/Code/ObstacleGenerator.cs" Line="8" Column="29" />
+      <File FileName="Assets/Code/FollowPlayer.cs" Line="13" Column="3" />
+      <File FileName="Assets/Code/SubCollision.cs" Line="17" Column="37" />
+      <File FileName="Assets/Code/IlluminateObject.cs" Line="11" Column="16" />
+      <File FileName="Assets/Code/Sonar.cs" Line="14" Column="3" />
+      <File FileName="Assets/Code/GameStatus.cs" Line="32" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

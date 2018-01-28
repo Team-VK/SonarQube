@@ -24,7 +24,7 @@ public class Sonar : MonoBehaviour {
 
 		Vector3 kikkeli =  crosshairPosition - positionOnScreen;
 		kikkeli.z = 0f;
-		Debug.Log (kikkeli);
+		//Debug.Log (kikkeli);
 		kikkeli = kikkeli.normalized;
 
 		if(angle > 65) {
