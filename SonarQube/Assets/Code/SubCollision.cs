@@ -16,8 +16,6 @@ public class SubCollision : MonoBehaviour {
 
 	void OnCollisionEnter (Collision col)
 	{
-		Debug.Log ("Uaargh");
-		Debug.Log (col.gameObject.name);
 		//call gameover ->
 		Destroy(this.gameObject);
 	}
