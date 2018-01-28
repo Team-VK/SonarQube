@@ -22,10 +22,10 @@ public class Sonar : MonoBehaviour {
 		//Debug.DrawLine (sonar.transform.position, crosshair.transform.position, Color.red, 10f, false);
 		float angle = AngleBetweenTwoPoints(positionOnScreen, crosshairPosition);
 
-		Vector3 kikkeli =  crosshairPosition - positionOnScreen;
-		kikkeli.z = 0f;
-		//Debug.Log (kikkeli);
-		kikkeli = kikkeli.normalized;
+		Vector3 trajectory =  crosshairPosition - positionOnScreen;
+		trajectory.z = 0f;
+		//Debug.Log (trajectory);
+		trajectory = trajectory.normalized;
 
 		if(angle > 65) {
 			angle = 65;
@@ -39,25 +39,25 @@ public class Sonar : MonoBehaviour {
 		//crosshair.transform.rotation = rot;
 
 		if (Input.GetKeyDown(KeyCode.Space)) {
-			sendSonarWave(positionOnScreen, rot, kikkeli);
+			sendSonarWave(positionOnScreen, rot, trajectory);
 			//Debug.Log (rot);
 		}
 		if (Input.GetKeyDown(KeyCode.C)) {
-				sendPushWave(positionOnScreen, rot, kikkeli);
+			sendPushWave(positionOnScreen, rot, trajectory);
 			//Debug.Log (rot);
 		}
 	}
 
 	//Sends a sonar wave in the direction pointed by the sonar device
 	void sendSonarWave(Vector2 positionOnScreen, Quaternion rot, Vector3 trajectory) {
-		var b = Instantiate(projectile, new Vector3(positionOnScreen.x, positionOnScreen.y, 0), rot);
+		var b = Instantiate(projectile, new Vector3((positionOnScreen.x*1.05f), (positionOnScreen.y), 0), rot);
 		b.GetComponent<Rigidbody> ().velocity = trajectory * 20;
 		//Debug.Log (b.transform.rotation);
 	}
 
 	//Send a pushing wave
 	void sendPushWave(Vector2 positionOnScreen, Quaternion rot, Vector3 trajectory) {
-		var b = Instantiate(pushingprojectile, new Vector3(positionOnScreen.x, positionOnScreen.y, 0), rot);
+		var b = Instantiate(pushingprojectile, new Vector3((positionOnScreen.x * 1.05f), (positionOnScreen.y), 0), rot);
 		b.GetComponent<Rigidbody> ().velocity = trajectory * 20;
 	}
 
