@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311918, g: 0.3807398, b: 0.35872716, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311918, g: 0.38073993, b: 0.35872698, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -88,7 +88,6 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaDirect: 0.5
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
-    m_ShowResolutionOverlay: 1
   m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -777,7 +776,7 @@ MonoBehaviour:
   mine: {fileID: 4277476602274638, guid: 651d5e83f0fa543a4939ba998220b967, type: 2}
   barrel: {fileID: 4238034728991842, guid: 05411f2c1e6a84696ae47a932bcad71f, type: 2}
   tree: {fileID: 4742042577773372, guid: b47fb595fe6264eb69512e5cf09f4b6b, type: 2}
-  ring: {fileID: 4377524268539272, guid: c8805ee30c1094b5c8556040927bcc67, type: 2}
+  ring: {fileID: 4080008755452248, guid: 4051484da363c4b67983f62b7f166e7e, type: 2}
 --- !u!1 &761863261
 GameObject:
   m_ObjectHideFlags: 0
