@@ -24,9 +24,9 @@ public class IlluminateObject : MonoBehaviour{
 	
 	void OnTriggerEnter(Collider col)
     {
-        if(col.gameObject.name == "ScanProjectile")
-        {
+        //if(col.gameObject.name == "ScanProjectile")
+        //{
 			fading = colorStart;
-        }
+        //}
 	}
 }

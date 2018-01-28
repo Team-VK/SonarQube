@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerInput : MonoBehaviour {
 
+	private float gametimer = 0;
+
     // Use this for initialization
     void Start () {
 
@@ -11,7 +13,10 @@ public class PlayerInput : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        var playerspeed = 3.0f;
+
+		gametimer = Time.deltaTime;
+			
+		var playerspeed = 3.0f + (gametimer/0.5f);
 		var crosshairspeed = 3.0f;
         Vector3 position = this.transform.position; //Can represent either the player or the crosshair
 
