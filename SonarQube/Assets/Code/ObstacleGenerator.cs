@@ -6,6 +6,7 @@ public class ObstacleGenerator : MonoBehaviour {
 
 	public Transform mine;
 	public Transform barrel;
+	public Transform tree;
 	//public GameObject player;
 
 	private float distanceAwayFromPlayer = 15f;
@@ -23,8 +24,9 @@ public class ObstacleGenerator : MonoBehaviour {
 		// Also palyer starts to move faster and faster -> no need to worry on this class
 
 		// TODO, generate new obstacle every 2 seconds
-		time += Time.deltaTime;
-		if (time > 5f) {
+		time += Time.deltaTime / 10000f * (float) GameStatus.score;
+		float rnd = Random.Range(0f, 1f);
+		if (time > rnd) {
 			createObstacleInstance();
 			time = 0f;
 		}
@@ -37,22 +39,33 @@ public class ObstacleGenerator : MonoBehaviour {
 
 		Vector3 sub_pos = GameObject.FindGameObjectWithTag("Subumarine").transform.position;
 		float obstacleX = sub_pos.x + distanceAwayFromPlayer;
+        var pos = Camera.main.WorldToViewportPoint(sub_pos);
+        pos.x = 1.1f;
 		float rnd = Random.Range(0f, 1f);
+		float droprnd = Random.Range(0f, 0.5f);
 		if (rnd < 0.25f) {
-			Instantiate(mine, new Vector3(obstacleX,0f,0f),  Quaternion.identity);
+        	pos.y = rnd;
+        	var gen_post = Camera.main.ViewportToWorldPoint(pos);
+			Instantiate(mine, gen_post,  Random.rotation);
 			Debug.Log("CREATE 1");
 		}
 		else if (rnd >= 0.25f && rnd < 0.5f) {
-			Instantiate(barrel, new Vector3(obstacleX,0f,0f),  Quaternion.identity);
+        	pos.y = 1f - droprnd;
+        	var gen_post = Camera.main.ViewportToWorldPoint(pos);
+			Instantiate(barrel, gen_post,  Random.rotation);
 			Debug.Log("CREATE 2");
 		} 
 		else if (rnd >= 0.5f && rnd < 0.75f) {
+        	pos.y = 1f - droprnd;
 
-			Instantiate(barrel, new Vector3(obstacleX,0f,0f),  Quaternion.identity);
+        	var gen_post = Camera.main.ViewportToWorldPoint(pos);
+			Instantiate(tree, gen_post,  Random.rotation);
 			Debug.Log("CREATE 3");
 		}
 		else  {
-			Instantiate(barrel, new Vector3(obstacleX,0f,0f),  Quaternion.identity);
+        	pos.y = 1f - droprnd;
+        	var gen_post = Camera.main.ViewportToWorldPoint(pos);
+			Instantiate(barrel, gen_post,  Random.rotation);
 			Debug.Log("CREATE 4");
 		}
 	}

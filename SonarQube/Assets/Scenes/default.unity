@@ -688,6 +688,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mine: {fileID: 4277476602274638, guid: 651d5e83f0fa543a4939ba998220b967, type: 2}
   barrel: {fileID: 4238034728991842, guid: 05411f2c1e6a84696ae47a932bcad71f, type: 2}
+  tree: {fileID: 4742042577773372, guid: b47fb595fe6264eb69512e5cf09f4b6b, type: 2}
 --- !u!1 &761863261
 GameObject:
   m_ObjectHideFlags: 0
