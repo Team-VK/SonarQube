@@ -26,7 +26,7 @@ public class GameStatus : MonoBehaviour {
 		Debug.Log (subumarine);
 
 		if (subumarine == null) {
-			Debug.Log ("Kräsh!");
+			//Debug.Log ("Kräsh!");
 			Gameover();
 		}
 	}
