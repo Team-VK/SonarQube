@@ -4,29 +4,28 @@ using System.Collections.Generic;
 
 public class IlluminateObject : MonoBehaviour{
 
-    public Color colorStart = new Color(255f, 255F, 255f, 255f);
-	Color fading;
-    public float rate = 100.0f;
-    public Material _material;
-	Shader shader;
+    float colorStart = 1.0f;
+	float fading;
+    float rate = 0.5f;
+    Renderer rend;
+    Color color;
 
     void Start() {
-        _material = this.GetComponent<Renderer>().material;
+        rend = this.GetComponent<Renderer>();
     }
     void Update() {
 		if(Input.GetKey(KeyCode.Q)) {
 			fading = colorStart;
 		}
-		fading.a -= rate * Time.deltaTime;
-		_material.color = fading;
+        fading -= rate * Time.deltaTime;
+        color = rend.material.color;
+        color.a = fading;
+		rend.material.color = color;
 		//Debug.Log(_material.color);
     }
 	
 	void OnTriggerEnter(Collider col)
     {
-        //if(col.gameObject.name == "ScanProjectile")
-        //{
-			fading = colorStart;
-        //}
+		fading = colorStart;
 	}
 }
