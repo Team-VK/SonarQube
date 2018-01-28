@@ -50,9 +50,21 @@ public class PlayerInput : MonoBehaviour {
 		position.z = 0f;
 
         // Prevent player moving beyond the roof and floor values
-        var pos = Camera.main.WorldToViewportPoint(position);
-        pos.x = Mathf.Clamp(pos.x, 0.1f, 0.9f);
-        pos.y = Mathf.Clamp(pos.y, 0.1f, 0.9f);
-        this.transform.position = Camera.main.ViewportToWorldPoint(pos);
+		/*
+		if (this.CompareTag ("Crosshair") == true) {
+			Vector3 pos = GameObject.FindGameObjectWithTag("Subumarine").transform.localPosition;
+			//pos.x = Mathf.Clamp (pos.x, 0.1f, 0.9f);
+			//pos.y = Mathf.Clamp (pos.y, 0.1f, 0.9f);
+			this.transform.position = pos;
+			
+		} else {
+		*/
+			var pos = Camera.main.WorldToViewportPoint (position);
+			pos.x = Mathf.Clamp (pos.x, 0.1f, 0.9f);
+			pos.y = Mathf.Clamp (pos.y, 0.1f, 0.9f);
+			this.transform.position = Camera.main.ViewportToWorldPoint (pos);
+		/*
+		 * }
+		 */
     }
 }
