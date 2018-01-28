@@ -26,12 +26,18 @@ public class GameStatus : MonoBehaviour {
 		Debug.Log (subumarine);
 
 		if (subumarine == null) {
-			Debug.Log ("Kräsh!");
+			//Debug.Log ("Kräsh!");
 			Gameover();
 		}
 	}
 
 	void Gameover() {
+		GameObject[] projectiles = GameObject.FindGameObjectsWithTag("projectile");
+
+		foreach (GameObject projectile in projectiles) {
+			Destroy (projectile);
+		}
+
 		Time.timeScale = 0.0F;
 		gameOver.text = "GAME OVER!";
 	}

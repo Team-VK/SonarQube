@@ -20,7 +20,7 @@ public class Sonar : MonoBehaviour {
 		//print (crosshair.normal);	
 		Vector3 crosshairPosition = crosshair.transform.position;
 		//Debug.DrawLine (sonar.transform.position, crosshair.transform.position, Color.red, 10f, false);
-		float angle = AngleBetweenTwoPoints(positionOnScreen, crosshairPosition);
+		float angle = AngleBetweenTwoPoints(positionOnScreen.normalized, crosshairPosition.normalized);
 
 		Vector3 trajectory =  crosshairPosition - positionOnScreen;
 		trajectory.z = 0f;
@@ -50,14 +50,14 @@ public class Sonar : MonoBehaviour {
 
 	//Sends a sonar wave in the direction pointed by the sonar device
 	void sendSonarWave(Vector2 positionOnScreen, Quaternion rot, Vector3 trajectory) {
-		var b = Instantiate(projectile, new Vector3((positionOnScreen.x*1.05f), (positionOnScreen.y), 0), rot);
+		var b = Instantiate(projectile, new Vector3((positionOnScreen.x+0.5f), (positionOnScreen.y), 0), rot);
 		b.GetComponent<Rigidbody> ().velocity = trajectory * 20;
 		//Debug.Log (b.transform.rotation);
 	}
 
 	//Send a pushing wave
 	void sendPushWave(Vector2 positionOnScreen, Quaternion rot, Vector3 trajectory) {
-		var b = Instantiate(pushingprojectile, new Vector3((positionOnScreen.x * 1.05f), (positionOnScreen.y), 0), rot);
+		var b = Instantiate(pushingprojectile, new Vector3((positionOnScreen.x+0.5f), (positionOnScreen.y), 0), rot);
 		b.GetComponent<Rigidbody> ().velocity = trajectory * 20;
 	}
 
