@@ -22,8 +22,8 @@ GameObject:
   - component: {fileID: 33899146574059164}
   - component: {fileID: 135700935079657382}
   - component: {fileID: 23284106577592794}
-  - component: {fileID: 114582694229618290}
   - component: {fileID: 54915296408898690}
+  - component: {fileID: 114803195256223880}
   m_Layer: 0
   m_Name: PushProjectile
   m_TagString: Untagged
@@ -100,7 +100,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &114582694229618290
+--- !u!114 &114803195256223880
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -108,7 +108,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1716015004887872}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8262381532db043b6ab511e1cae2d4a4, type: 3}
+  m_Script: {fileID: 11500000, guid: 5c856f700c6be4d1cbf32de6f73d587a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!135 &135700935079657382

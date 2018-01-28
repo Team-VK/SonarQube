@@ -22,7 +22,7 @@ public class IlluminateObject : MonoBehaviour{
 		//Debug.Log(_material.color);
     }
 	
-	void onCollisionEnter(Collision col)
+	void OnTriggerEnter(Collider col)
     {
         if(col.gameObject.name == "ScanProjectile")
         {

@@ -32,18 +32,14 @@ public class PushProjectileBehavior : MonoBehaviour {
 	}
 
 	*/
-	/*
-	void OnCollisionEnter(Collision collision)
+
+	void OnCollisionEnter (Collision col)
 	{
-		foreach (ContactPoint contact in collision.contacts)
-		{
-			Debug.DrawRay(contact.point, contact.normal, Color.white);
-		}
-		if (collision.relativeVelocity.magnitude > 2)
-			foreach (Component c in this.GetComponents) {
-				Destroy(c);
-			}
+		Destroy(this.gameObject);
 	}
-	*/
+
+	void OnTriggerEnter(Collider col) {
+		Destroy(this.gameObject);
+	}
 
 }
